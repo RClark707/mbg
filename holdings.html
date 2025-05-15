@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body {text-align: center;}
+        .div1 {display: inline;}
+    </style>
+    
+    <head>
+        <title>Mythic Bastionland Generator</title>
+    </head>
+
+    <body>
+        <h1>Phase Generator</h1>
+        
+        <button type="button" onclick="nextPhase()">Roll Next Phase!</button>
+        <p>This will help you roll the next Myths, Landmarks, and/or Terrains encountered.</p>
+        <!--Roll for Myths, if 1 get random of 6, if 2 or 3 get closest, otherwise get landmark-->
+        <div id="myths">The Company encounters the closest Myth. The Company encounters a random Myth: #1. The Company encounters this hex's Landmark.</div>
+        <!--Generate a Feature and Wonder-->
+        <div><b>Feature:</b> <div1 id="feature-1">Buried</div1> <div1 id="feature-2">Brook</div1></div>
+        <div><b>Wonder:</b> <div1 id="wonder-1">Pleasure</div1> <div1 id="wonder-2">Light</div1></div>
+        <!--Generate Landscape-->
+        <div><b>Landscape:</b> <div1 id="landscape-1">Barren</div1> <div1 id="landscape-2">Marsh</div1></div>
+        <div><b>Otherworldly Landscape:</b> <div1 id="otherworld-1">Acidic</div1> <div1 id="otherworld-2">Flats</div1></div>
+        <!--Generate Weather, Sky, and Water-->
+        <div><b>Weather:</b> <div1 id="weather-1">Gentle</div1> <div1 id="weather-2">Rain</div1></div>
+        <div><b>Sky:</b> <div1 id="sky-1">Glittering</div1> <div1 id="sky-2">Aurora</div1></div>
+        <div><b>Water:</b> <div1 id="water-1">Crystal</div1> <div1 id="water-2">Silk</div1></div>
+        <!--Generate Flora and Fauna-->
+        <div><b>Flora:</b> <div1 id="flora-1">Aromatic</div1> <div1 id="flora-2">Grasses</div1></div>
+        <div><b>Fauna:</b> <div1 id="fauna-1">Watchful</div1> <div1 id="fauna-2">Ungulates</div1></div>
+
+        <h1>Holding Generator</h1>
+        <button type="button" onclick="generateHolding()">Generate Holding!</button>
+        <p>This will help you generate a Holding.</p>
+        <div><b>Holding:</b> The <div1 id="h-style">Style</div1> <div1 id="h-feature">Feature</div1></div>
+        <div><b>Bailey:</b> <div1 id="b-style">Style</div1> <div1 id="b-feature">Feature</div1></div>
+        <div><b>Keep:</b> <div1 id="k-center">Centrepiece</div1> and <div1 id="k-decor">Decoration</div1></div>
+        <div><b>Food:</b> <div1 id="f-quality">Quality</div1> <div1 id="f-type">Type</div1></div>
+        <div><b>Goods:</b> <div1 id="g-theme">Theme</div1> <div1 id="g-type">Type</div1></div>
+        <div><b>Luxuries:</b> <div1 id="l-rarity">Rarity</div1> <div1 id="l-type">Type</div1></div>
+        <div><b>Drama:</b> <div1 id="d-theme">Theme</div1> involving <div1 id="d-detail">Detail</div1></div>
+        <div><b>Woe:</b> <div1 id="w-desc">Description</div1> <div1 id="w-incident">Incident</div1></div>
+        <div><b>News:</b> <div1 id="n-subject">Subject</div1>, about which folk are <div1 id="n-mood">Mood</div1></div>
+
+        <script src="functions.js"></script>
+    </body>
+</html>

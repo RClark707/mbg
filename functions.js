@@ -1,6 +1,3 @@
-// ARRAY TO HOLD RANDOM VALUES
-let noise = [];
-
 // HEX SPARK MAP
 const hex_sparks = new Map([
     ['feature1', ['Buried', 'Colourful', 'Adorned', 'Spiked', 'Split', 'Entombed', 'Reflective', 'Veiled', 'Hot', 'Drowned', 'Desecrated', 'Isolated']]
@@ -21,6 +18,7 @@ const hex_sparks = new Map([
     , ['flora2', ['Grasses', 'Heather', 'Shrubs', 'Brambles', 'Canopy', 'Ferns', 'Trunks', 'Vines', 'Conifers', 'Saplings', 'Reeds', 'Roots']]
     , ['fauna1', ['Watchful', 'Helpful', 'Graceful', 'Loud', 'Mischievous', 'Deceitful', 'Enlightening', 'Placid', 'Beautiful', 'Mighty', 'Hostile', 'Aloof']]
     , ['fauna2', ['Ungulates', 'Songbirds', 'Canines', 'Rodents', 'Amphibians', 'Insects', 'Felines', 'Reptiles', 'Hawks', 'Mustelids', 'Fowl', 'Bears']]
+    , ['location', ['Ashland ','Badland ','Bamboo forest ','Basalt columns ','Bay ','Beach ','Bluff ','Bog ','Boulder field ','Brook ','Butte ','Caldera ','Canyon ','Cave ','Cliff ','Cloud forest','Coniferous forest','Copse ','Crag ','Crater ','Creek ','Crossing ','Crystals ','Deciduous forest','Delta ','Dunes ','Dust bowl','Element ','Fen ','Fjord ','Floodplain ','Gas vent','Geyser ','Glacier ','Gorge ','Grotto ','Grove ','Gulch ','Heath ','Highland ','Hollow ','Hoodoo ','Hot ','Ice ','Jungle ','Knoll ','Lagoon ','Lair ','Lake ','Lakebed ','Lava field','Lava tube','Loch','Mangrove','Marsh','Meadow','Mesa','Mire','Moor','Mountain','Mud plain','Oasis','Oil seep','Pass','Pasture','Petrified','Pit','Plateau','Pond','Prairie','Quicksand','Rainforest','Rapids','Ravine','Ridge','River','Riverland','Rockslide','flat','Salt marsh','Savanna','Scree slope','Scrubland','Sinkhole','Spring','Steppe','Stream','Sulfur spring','Swamp','Taiga','Tar pit','Thicket','Tundra','Valley','Volcanic plain','Volcano','Wasteland','Waterfall','Wetlands','Whirlpool']]
 ]);
 
 // HOLDING SPARK MAP
@@ -90,6 +88,9 @@ function nextPhase() {
     // ROLL AND ASSIGN NATURE FEATURES
     for (let [key, value] of hex_sparks) {
         setInner(key, value[Math.floor(Math.random() * 12)]);
+        if (key == 'location') {
+            setInner(key, value[Math.floor(Math.random() * 100)]);
+        }
     }
 }
 

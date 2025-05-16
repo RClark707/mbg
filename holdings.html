@@ -9,40 +9,62 @@
         <title>Mythic Bastionland Generator</title>
     </head>
 
+    <script>
+        window.onload = function() {
+            nextPhase()
+            generateHolding()
+        }
+    </script>
+
     <body>
         <h1>Phase Generator</h1>
-        
         <button type="button" onclick="nextPhase()">Roll Next Phase!</button>
         <p>This will help you roll the next Myths, Landmarks, and/or Terrains encountered.</p>
         <!--Roll for Myths, if 1 get random of 6, if 2 or 3 get closest, otherwise get landmark-->
-        <div id="myths">The Company encounters the closest Myth. The Company encounters a random Myth: #1. The Company encounters this hex's Landmark.</div>
+        <div id="myths">The Company encounters the nearest Myth. The Company encounters a random Myth: #1. The Company encounters this hex's Landmark.</div>
         <!--Generate a Feature and Wonder-->
-        <div><b>Feature:</b> <div1 id="feature-1">Buried</div1> <div1 id="feature-2">Brook</div1></div>
-        <div><b>Wonder:</b> <div1 id="wonder-1">Pleasure</div1> <div1 id="wonder-2">Light</div1></div>
+        <div><b>Feature:</b> <div1 id="feature1">Buried</div1> <div1 id="feature2">Brook</div1></div>
+        <div><b>Wonder:</b> <div1 id="wonder1">Pleasure</div1> <div1 id="wonder2">Light</div1></div>
         <!--Generate Landscape-->
-        <div><b>Landscape:</b> <div1 id="landscape-1">Barren</div1> <div1 id="landscape-2">Marsh</div1></div>
-        <div><b>Otherworldly Landscape:</b> <div1 id="otherworld-1">Acidic</div1> <div1 id="otherworld-2">Flats</div1></div>
+        <div><b>Landscape:</b> <div1 id="landscape1">Barren</div1> <div1 id="landscape2">Marsh</div1></div>
+        <div><b>Otherworldly Landscape:</b> <div1 id="otherworld1">Acidic</div1> <div1 id="otherworld2">Flats</div1></div>
         <!--Generate Weather, Sky, and Water-->
-        <div><b>Weather:</b> <div1 id="weather-1">Gentle</div1> <div1 id="weather-2">Rain</div1></div>
-        <div><b>Sky:</b> <div1 id="sky-1">Glittering</div1> <div1 id="sky-2">Aurora</div1></div>
-        <div><b>Water:</b> <div1 id="water-1">Crystal</div1> <div1 id="water-2">Silk</div1></div>
+        <div><b>Weather:</b> <div1 id="weather1">Gentle</div1> <div1 id="weather2">Rain</div1></div>
+        <div><b>Sky:</b> <div1 id="sky1">Glittering</div1> <div1 id="sky2">Aurora</div1></div>
+        <div><b>Water:</b> <div1 id="water1">Crystal</div1> <div1 id="water2">Silk</div1></div>
         <!--Generate Flora and Fauna-->
-        <div><b>Flora:</b> <div1 id="flora-1">Aromatic</div1> <div1 id="flora-2">Grasses</div1></div>
-        <div><b>Fauna:</b> <div1 id="fauna-1">Watchful</div1> <div1 id="fauna-2">Ungulates</div1></div>
+        <div><b>Flora:</b> <div1 id="flora1">Aromatic</div1> <div1 id="flora2">Grasses</div1></div>
+        <div><b>Fauna:</b> <div1 id="fauna1">Watchful</div1> <div1 id="fauna2">Ungulates</div1></div>
+
+        <h1>People Generator</h1>
+        <button type="button">Roll Person!</button>
+        <p>This will help you quickly generate a Knight, Vassal or Vagabond.</p>
+        <!--Decide if they are a Knight, Vassal, or Vagabond-->
+        <div id="kvv">This person is a Knight who has sworn the Oath: The True Knight. This person is a Vagabond, their loyalty is their own. This person is a Vassal of the Realm.</div>
+        <!--Generate all Sparks-->
+        <div><b>Appearance:</b> <div1 id="appearance1">Delicate</div1> <div1 id="appearance2">Armoured</div1></div>
+        <div><b>Voice:</b> <div1 id="voice1">Whispering</div1> and <div1 id="voice2">Formal</div1></div>
+        <div><b>Personality:</b> <div1 id="personality1">Cautious</div1> with an interest in <div1 id="personality2">Botany</div1></div>
+        <div><b>Relationship:</b> <div1 id="relationship1">Adoring</div1> <div1 id="relationship2">Kin</div1></div>
+        <div><b>Desire:</b> <div1 id="desire1">Escape</div1> for <div1 id="desire2">Freedom</div1></div>
+        <div><b>Task:</b> <div1 id="task1">Investigate</div1> (a) <div1 id="task2">Knight</div1></div>
+        <div><b>Background:</b> <div1 id="background1">Deprived</div1> with memories of <div1 id="background2">War</div1></div>
+        <div><b>Ailment:</b> <div1 id="ailment1">Hidden</div1> <div1 id="ailment2">Insomnia</div1></div>
+        <div><b>Heraldry:</b> <div1 id="heraldry2">Beast</div1> against a <div1 id="heraldry1">Light</div1> palette</div>
 
         <h1>Holding Generator</h1>
         <button type="button" onclick="generateHolding()">Generate Holding!</button>
         <p>This will help you generate a Holding.</p>
-        <div><b>Holding:</b> The <div1 id="h-style">Style</div1> <div1 id="h-feature">Feature</div1></div>
-        <div><b>Bailey:</b> <div1 id="b-style">Style</div1> <div1 id="b-feature">Feature</div1></div>
-        <div><b>Keep:</b> <div1 id="k-center">Centrepiece</div1> and <div1 id="k-decor">Decoration</div1></div>
-        <div><b>Food:</b> <div1 id="f-quality">Quality</div1> <div1 id="f-type">Type</div1></div>
-        <div><b>Goods:</b> <div1 id="g-theme">Theme</div1> <div1 id="g-type">Type</div1></div>
-        <div><b>Luxuries:</b> <div1 id="l-rarity">Rarity</div1> <div1 id="l-type">Type</div1></div>
-        <div><b>Drama:</b> <div1 id="d-theme">Theme</div1> involving <div1 id="d-detail">Detail</div1></div>
-        <div><b>Woe:</b> <div1 id="w-desc">Description</div1> <div1 id="w-incident">Incident</div1></div>
-        <div><b>News:</b> <div1 id="n-subject">Subject</div1>, about which folk are <div1 id="n-mood">Mood</div1></div>
-
+        <div><b>Holding:</b> The <div1 id="holding1">Style</div1> <div1 id="holding2">Feature</div1></div>
+        <div><b>Bailey:</b> <div1 id="bailey1">Style</div1> <div1 id="bailey2">Feature</div1></div>
+        <div><b>Keep:</b> <div1 id="keep1">Centrepiece</div1> and <div1 id="keep2">Decoration</div1></div>
+        <div><b>Food:</b> <div1 id="food1">Quality</div1> <div1 id="food2">Type</div1></div>
+        <div><b>Goods:</b> <div1 id="goods1">Theme</div1> <div1 id="goods2">Type</div1></div>
+        <div><b>Luxuries:</b> <div1 id="luxuries1">Rarity</div1> <div1 id="luxuries2">Type</div1></div>
+        <div><b>Drama:</b> <div1 id="drama1">Theme</div1> involving <div1 id="drama2">Detail</div1></div>
+        <div><b>Woe:</b> <div1 id="woe1">Description</div1> <div1 id="woe2">Incident</div1></div>
+        <div><b>News:</b> <div1 id="news1">Subject</div1>, about which folk are <div1 id="news2">Mood</div1></div>
+        
         <script src="functions.js"></script>
     </body>
 </html>

@@ -45,6 +45,27 @@ const holding_sparks = new Map([
     , ['woe2', ['Disease', 'Famine', 'Raids', 'Invasion', 'Abduction', 'Storm', 'Fire', 'Revolt', 'Exodus', 'Beast', 'Killing', 'Theft']]
 ]);
 
+const people_sparks = new Map([
+    ['ailment1', ['Hidden', 'Mild', 'Intermittent', 'Growing', 'Medicated', 'Denied', 'Unexplained', 'Constant', 'Diminishing', 'Permanent', 'Debilitating', 'Obvious']]
+    , ['ailment2', ['Insomnia', 'Migraines', 'Arthritis', 'Nausea', 'Fixation', 'Blindness', 'Deafness', 'Melancholy', 'Shaking', 'Frailty', 'Coughing', 'Lethargy']]
+    , ['appearance1', ['Delicate', 'Short', 'Robust', 'Hard', 'Haggard', 'Cold', 'Warm', 'Youthful', 'Soft', 'Sickly', 'Tall', 'Rough']]
+    , ['appearance2', ['Armoured', 'Tattered', 'Vibrant', 'Crude', 'Eclectic', 'Traditional', 'Comfortable', 'Gaudy', 'Drab', 'Decorated', 'Functional', 'Elegant']]
+    , ['background1', ['Deprived', 'Pious', 'Outcast', 'Military', 'Insular', 'Nomadic', 'Drudgery', 'Mercantile', 'Feral', 'Prestigious', 'Academic', 'Pampered']]
+    , ['background2', ['War', 'Migration', 'Riding', 'Study', 'Exile', 'Joy', 'Sickness', 'Escape', 'Injury', 'Friendship', 'Execution', 'Romance']]
+    , ['desire1', ['Escape', 'Wealth', 'Status', 'Knowledge', 'Mastery', 'Heirloom', 'Marriage', 'Truth', 'Travel', 'Power', 'Security', 'Forgiveness']]
+    , ['desire2', ['Freedom', 'Love', 'Legacy', 'Recovery', 'Revenge', 'Duty', 'Fear', 'Guilt', 'Recognition', 'Defiance', 'Curiosity', 'Hatred']]
+    , ['heraldry1', ['Light', 'Hot', 'Earthy', 'Rich', 'Metallic', 'Brilliant', 'Grey', 'Jewelled', 'Subdued', 'Airy', 'Cold', 'Dark']]
+    , ['heraldry2', ['Beast', 'Bird', 'Fish', 'Weapon', 'Crown', 'Tree', 'Flower', 'Bodypart', 'Structure', 'Ring', 'Tool', 'Star']]
+    , ['personality1', ['Cautious', 'Spiritual', 'Intellectual', 'Ambitious', 'Serene', 'Righteous', 'Empathetic', 'Unstable', 'Prying', 'Melancholic', 'Cynical', 'Rash']]
+    , ['personality2', ['Botany', 'History', 'Music', 'Gambling', 'Animals', 'Art', 'Cookery', 'Craft', 'Fishing', 'Fashion', 'Hunting', 'Stories']]
+    , ['relationship1', ['Adoring', 'Reluctant', 'Secret', 'Estranged', 'Hateful', 'Distant', 'Harmonious', 'Intimate', 'Recent', 'Sworn', 'Tumultuous', 'Resentful']]
+    , ['relationship2', ['Kin', 'Friend', 'Lover', 'Spouse', 'Supporter', 'Ally', 'Rival', 'Successor', 'Mentor', 'Peer', 'Enemy', 'Guardian']]
+    , ['task1', ['Investigate', 'Capture', 'Destroy', 'Transport', 'Retrieve', 'Mend', 'Break', 'Guard', 'Aid', 'Salvage', 'Conceal', 'Hunt']]
+    , ['task2', ['Knight', 'Seer', 'Vassals', 'Livestock', 'Monument', 'Gold', 'Ruin', 'Animals', 'Dwelling', 'Holding', 'Bridge', 'Warband']]
+    , ['voice1', ['Whispering', 'Soothing', 'Smooth', 'Flat', 'Mumbled', 'Weak', 'Strong', 'Hesitant', 'Melodic', 'Gravelly', 'Erratic', 'Booming']]
+    , ['voice2', ['Formal', 'Poetic', 'Precise', 'Intense', 'Rambling', 'Detached', 'Passionate', 'Terse', 'Relaxed', 'Blunt', 'Boisterous', 'Friendly']]
+]);
+
 // FUNCTION TO ROLL RANDOM MYTH PHASE
 function nextPhase() {
     // ROLL FOR MYTH ENCOUNTER
@@ -73,7 +94,17 @@ function nextPhase() {
 }
 
 function generateHolding() {
+    // ROLL AND ASSIGN HOLDING FEATURES
     for (let [key, value] of holding_sparks) {
+        setInner(key, value[Math.floor(Math.random() * 12)]);
+    }
+}
+
+function generatePerson() {
+    // ROLL FOR KNIGHT, VAGABOND, VASSAL
+
+    // ROLL AND ASSIGN PERSON FEATURES
+    for (let [key, value] of people_sparks) {
         setInner(key, value[Math.floor(Math.random() * 12)]);
     }
 }

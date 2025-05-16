@@ -102,6 +102,24 @@ function generateHolding() {
 
 function generatePerson() {
     // ROLL FOR KNIGHT, VAGABOND, VASSAL
+    let roll6 = Math.floor(Math.random() * 6) + 1;
+    // ASSIGN TEXT
+    switch (roll6) {
+        case 1:
+            // KNIGHT
+            roll6 = Math.floor(Math.random() * 6) + 1;
+            let roll12 = Math.floor(Math.random() * 12) + 1;
+            setInner('kvv', 'This person is a Knight who has sworn the Oath: The ' + roll6 + '-' + roll12 + ' Knight.');
+            break;
+        case 2 || 3:
+            // VAGABOND
+            setInner('kvv', 'This person is a Vagabond, their loyalty is their own.');
+            break;
+        default:
+            // VASSAL
+            setInner('kvv', 'This person is a Vassal of the Realm.');
+            break;
+    }
 
     // ROLL AND ASSIGN PERSON FEATURES
     for (let [key, value] of people_sparks) {

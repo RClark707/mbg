@@ -64,6 +64,27 @@ const people_sparks = new Map([
     , ['voice2', ['Formal', 'Poetic', 'Precise', 'Intense', 'Rambling', 'Detached', 'Passionate', 'Terse', 'Relaxed', 'Blunt', 'Boisterous', 'Friendly']]
 ]);
 
+const combat_sparks = new Map([
+    ['soldier1',['Mobile','Reluctant','Mounted','Renowned','Zealous','Conscript','Cowardly','Heavy','Bloodthirsty','Fancy','Fearsome','Mercenary']]
+    ,['soldier2',['Skirmisher','Archer','Scout','Militia','Guard','Infiltrator','Raider','Veteran','Infantry','Rider','Charger','Knight']]
+    ,['weapon1',['Short','Pole','Chain','Barbed','Forked','Curved','Weighted','Double','Crossed','Throwing','Thin','Long']]
+    ,['weapon2',['Blade','Spear','Axe','Mace','Cleaver','Hammer','Spike','Hook','Club','Rod','Fang','Sword']]
+    ,['manoeuvres1',['Feint','Strike','Boast','Defend','Negotiate','Flurry','Rush','Taunt','Jab','Charge','Onslaught','Provoke']]
+    ,['manoeuvres2',['Demoralise','Confuse','Exploit','Stall','Relocate','Observe','Defeat','Expose','Surprise','Stagger','Weaken','Intimidate']]
+    ,['conflict1',['Border','Religion','Succession','Resource','Debt','Betrayal','Theft','Conquest','Marriage','Deceit','Waterway','Bloodfeud']]
+    ,['conflict2',['War','Raids','Animosity','Truce','Skirmishes','Standoff','Occupation','Stalemate','Blockade','Tension','Forgotten','Negotiations']]
+    ,['duel1',['Joust','Swords','Partner','Team','Unarmoured','Chained','Blood','Death','Surrender','Judged','Blunt','Javelins']]
+    ,['duel2',['Timed','Pit','Bridge','Immobile','Maze','Archers','Fire','Beasts','Mud','Night','Water','Cage']]
+    ,['battlefield1',['River','Ruins','Hill','Forest','Lake','Outpost','Pass','Farm','Trail','Bridge','Wall','Dwelling']]
+    ,['battlefield2',['Smoke','Mud','Flies','Trenches','Tower','Boulders','Flowers','Streams','Thorns','Stink','Ravine','Tombs']]
+    ,['deployment1',['Aggressive','Mobile','Tight','Deceptive','Shielded','Rigid','Flexible','Open','Focused','Dispersed','Reinforced','Defensive']]
+    ,['deployment2',['Line','Column','Chevron','Ranks','Square','Circle','Flank','Skirmish','Block','Square','Wedge','Scatter']]
+    ,['strategy1',['Encircle','Capture','Assault','Harass','Pillage','Outlast','Ambush','Overwhelm','Blockade','Divide','Focus','Counter']]
+    ,['strategy2',['Darkness','Reserves','Diversion','Betrayal','Artillery','Camouflage','Bluff','Delay','Decoy','Bait','Sacrifice','Fire']]
+    ,['event1',['Allies','Morale','Weather','Terrain','Strategy','Discipline','Animal','Opportunists','Deception','Leader','Loot','Weapons']]
+    ,['event2',['Collapse','Attack','Slaughter','Stalemate','Stall','Falter','Sabotage','Scatter','Charge','Confusion','Worsening','Discovery']]
+])
+
 // FUNCTION TO ROLL RANDOM MYTH PHASE
 function nextPhase() {
     // ROLL FOR MYTH ENCOUNTER
@@ -124,6 +145,13 @@ function generatePerson() {
 
     // ROLL AND ASSIGN PERSON FEATURES
     for (let [key, value] of people_sparks) {
+        setInner(key, value[Math.floor(Math.random() * 12)]);
+    }
+}
+
+function generateCombat() {
+    // ROLL AND ASSIGN COMBAT FEATURES
+    for (let [key, value] of combat_sparks) {
         setInner(key, value[Math.floor(Math.random() * 12)]);
     }
 }

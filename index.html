@@ -11,12 +11,12 @@
 
     .column.side {
         float: left;
-        width: 45%;
+        width: 33%;
     }
 
     .column.middle {
         float: left;
-        width: 10%;
+        width: 33%;
     }
 
     .row:after {
@@ -39,8 +39,9 @@
 <script>
     window.onload = function () {
         nextPhase()
-        generateHolding()
         generatePerson()
+        generateCombat()
+        generateHolding()
     }
 </script>
 
@@ -140,7 +141,44 @@
             </div>
         </div>
         <div class="column middle">
-            &nbsp;
+            <h1>Combat Generator</h1>
+            <button type="button" onclick="generateCombat()">Roll Combat!</button>
+            <p>This will help you quickly come up with interesting battles.</p>
+            <!--Generate all Sparks-->
+            <div><b>Soldier:</b>
+                <div1 id="soldier1">Mobile</div1>
+                <div1 id="soldier2">Skirmisher</div1>
+            </div>
+            <div><b>Weapon:</b>
+                <div1 id="weapon1">Short</div1>
+                <div1 id="weapon2">Blade</div1>
+            </div>
+            <div><b>Manoeuvres:</b>
+                <div1 id="manoeuvres1">Feint</div1> with the intent to <div1 id="manoeuvres2">Demoralise</div1>
+            </div>
+            <div><b>Conflict:</b>
+                <div1 id="conflict1">Border</div1>
+                <div1 id="conflict2">War</div1>
+            </div>
+            <div><b>Duel:</b>
+                <div1 id="duel1">Joust</div1>,
+                <div1 id="duel2">Timed</div1>
+            </div>
+            <div><b>Battlefield:</b>
+                <div1 id="battlefield1">River</div1> with <div1 id="battlefield2">Smoke</div1>
+            </div>
+            <div><b>Deployment:</b>
+                <div1 id="deployment1">Aggressive</div1>
+                <div1 id="deployment2">Line</div1>
+            </div>
+            <div><b>Strategy:</b>
+                <div1 id="strategy1">Encircle</div1>,
+                <div1 id="strategy2">Darkness</div1>
+            </div>
+            <div><b>Event:</b>
+                <div1 id="event1">Allies</div1>
+                <div1 id="event2">Collapse</div1>
+            </div>
         </div>
         <div class="column side">
             <h1>Holding Generator</h1>

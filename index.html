@@ -9,12 +9,7 @@
         display: inline;
     }
 
-    .column.side {
-        float: left;
-        width: 33%;
-    }
-
-    .column.middle {
+    .column {
         float: left;
         width: 33%;
     }
@@ -26,7 +21,7 @@
     }
 
     @media screen and (max-width: 600px) {
-        .column.side, .column.middle {
+        .column {
             width: 100%;
         }
     }
@@ -42,6 +37,9 @@
         generatePerson()
         generateCombat()
         generateHolding()
+        generateLocation()
+        generateMagic()
+        generateExtra()
     }
 </script>
 
@@ -64,7 +62,7 @@
         </div>
         <!--Knave 2E Locations-->
         <div><b>Location:</b>
-            <div1 id="location">Ashland</div1>
+            <div1 id="location1">Ashland</div1>
         </div>
         <!--Generate Landscape-->
         <div><b>Landscape:</b>
@@ -100,7 +98,7 @@
     </div>
 
     <div class="row">
-        <div class="column side">
+        <div class="column">
             <h1>People Generator</h1>
             <button type="button" onclick="generatePerson()">Roll Person!</button>
             <p>This will help you quickly generate a Knight, Vassal or Vagabond.</p>
@@ -140,7 +138,7 @@
                 <div1 id="heraldry2">Beast</div1> against a <div1 id="heraldry1">Light</div1> palette
             </div>
         </div>
-        <div class="column middle">
+        <div class="column">
             <h1>Combat Generator</h1>
             <button type="button" onclick="generateCombat()">Roll Combat!</button>
             <p>This will help you quickly come up with interesting battles.</p>
@@ -180,7 +178,7 @@
                 <div1 id="event2">Collapse</div1>
             </div>
         </div>
-        <div class="column side">
+        <div class="column">
             <h1>Holding Generator</h1>
             <button type="button" onclick="generateHolding()">Generate Holding!</button>
             <p>This will help you generate a Holding.</p>
@@ -215,6 +213,94 @@
             </div>
             <div><b>News:</b>
                 <div1 id="news1">Subject</div1>, about which folk are <div1 id="news2">Mood</div1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <h1>Knave Locations</h1>
+            <button type="button" onclick="generateLocation()">Roll Location!</button>
+            <p>This will help you quickly create a location.</p>
+            <div><b>Location:</b>
+                <div1 id="place_traits1"></div1>
+                <div1 id="location2"></div1>
+            </div>
+            <div><b>Structure:</b>
+                <div1 id="place_traits2"></div1>
+                <div1 id="structures"></div1>
+            </div>
+            <div><b>Room:</b>
+                <div1 id="place_traits3"></div1>
+                <div1 id="rooms"></div1>
+            </div>
+            <div><b>Contents:</b>
+                <div1 id="room_details"></div1>
+                and
+                <div1 id="room_themes"></div1>
+            </div>
+            <div><b>Dungeon:</b>
+                <div1 id="place_traits4"></div1>
+                <div1 id="dungeons"></div1>
+            </div>
+        </div>
+        <div class="column">
+            <h1>Knave Magic</h1>
+            <button type="button" onclick="generatMagic()">Roll Magic!</button>
+            <p>This will help you cast spells.</p>
+            <div><b>Spell:</b>
+                <div1 id="qualities"></div1>
+                <div1 id="effects"></div1>
+                <div1 id="forms"></div1>
+            </div>
+            <div><b>Element:</b>
+                <div1 id="elements"></div1>
+            </div>
+            <div><b>Delusion:</b>
+                <div1 id="delusions"></div1>
+            </div>
+            <div><b>Disaster:</b>
+                <div1 id="disasters"></div1>
+            </div>
+            <div><b>Magic School:</b>
+                <div1 id="magic_schools"></div1>
+            </div>
+            <div><b>Domain:</b>
+                <div1 id="domains"></div1>
+            </div>
+            <div><b>Symbol:</b>
+                <div1 id="symbols"></div1>
+            </div>
+        </div>
+        <div class="column">
+            <h1>Knave Extras</h1>
+            <button type="button" onclick="generateExtra()">Roll Extra!</button>
+            <p>This will help you generate extra details.</p>
+            <div><b>Activity:</b>
+                <div1 id="activities"></div1>
+            </div>
+            <div><b>Weapon:</b>
+                <div1 id="weapons"></div1>
+            </div>
+            <div><b>Tool:</b>
+                <div1 id="tools"></div1>
+            </div>
+            <div><b>Item:</b>
+                <div1 id="items"></div1>
+            </div>
+            <div><b>Clothing:</b>
+                <div1 id="fabrics"></div1>
+                <div1 id="clothing"></div1>
+            </div>
+            <div><b>Description:</b>
+                <div1 id="colors"></div1>
+                <div1 id="textures"></div1>
+                <div1 id="tastes"></div1>
+            </div>
+            <div><b>Ingredient:</b>
+                <div1 id="ingredients"></div1>
+            </div>
+            <div><b>Book:</b>
+                <div1 id="books"></div1>
             </div>
         </div>
     </div>

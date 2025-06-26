@@ -124,8 +124,16 @@ const knave_extras = new Map([
     , ['weapons', ['Arming sword', 'Longsword', 'Backsword', 'Lucerne hammer', 'Bardiche', 'Mace', 'Baton', 'Machete', 'Battleaxe', 'Man catcher', 'Beheading sword', 'Maul', 'Bill hook', 'Messer', 'Blowgun', 'Meteor hammer', 'Blowpipe', 'Military fork', 'Boar spear', 'Morningstar', 'Bolas', 'Nunchaku', 'Boomerang', 'Pickaxe', 'Brass knuckles', 'Pike', 'Bullet crossbow', 'Poleaxe', 'Butterfly sword', 'Push dagger', 'Censer flail', 'Ranseur', 'Cestus', 'Rapier', 'Chain whip', 'Recurve bow', 'Chakram', 'Rondel dagger', 'Claymore', 'Rope dart', 'Club', 'Sabre', 'Crossbow', 'Sai', 'Cutlass', 'Scimitar', 'Dagger', 'Scourge', 'Dao', 'Shortbow', 'Deer horn knives', 'Shortsword', 'Dirk', 'Shuriken', 'Double flail', 'Sickle', 'Emeici', 'Side sword', 'Falchion', 'Sling', 'Flail', 'Slingshot', 'Flambard', 'Spear', 'Flying claws', 'Staff', 'Gauntlet sword', 'Stave sling', 'Gladius', 'Stiletto', 'Glaive', 'Swordstaff', 'Halberd', 'Tanto', 'Hatchet', 'Three-part staff', 'Hook sword', 'Throwing axe', 'Horsebow', 'Throwing knife', 'Hunting knife', 'Tiger claws', 'Ice pick', 'Tonfa', 'Javelin', 'Trident', 'Katana', 'Triple flail', 'Katar', 'Wakizashi', 'Khopesh', 'War scythe', 'Kukri', 'Warhammer', 'Lance', 'Warpick', 'Lasso', 'Whip', 'Longbow', 'Zweihander']]
 ]);
 
+const phases = ['morning','afternoon','night'];
+
+let phase_count = 0;
+
 // FUNCTION TO ROLL RANDOM MYTH PHASE
 function nextPhase() {
+    // SET PHASE VALUES
+    phase_count+=1;
+    setInner('phase',phases[(phase_count - 1) % 3])
+    setInner('day_count',Math.ceil(phase_count / 3))
     // ROLL FOR MYTH ENCOUNTER
     let roll6 = Math.floor(Math.random() * 6) + 1;
     // ASSIGN MYTH TEXT

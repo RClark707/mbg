@@ -46,6 +46,7 @@
 <body>
     <div class="row">
         <h1>Phase Generator</h1>
+        <p>It is currently the <b><div1 id="phase">morning</div1></b> of day <b><div1 id="day_count">0</div1></b> of the journey.</p>
         <button type="button" onclick="nextPhase()">Roll Next Phase!</button>
         <p>This will help you roll the next Myths, Landmarks, and/or Terrains encountered.</p>
         <!--Roll for Myths, if 1 get random of 6, if 2 or 3 get closest, otherwise get landmark-->
@@ -245,7 +246,7 @@
         </div>
         <div class="column">
             <h1>Knave Magic</h1>
-            <button type="button" onclick="generatMagic()">Roll Magic!</button>
+            <button type="button" onclick="generateMagic()">Roll Magic!</button>
             <p>This will help you cast spells.</p>
             <div><b>Spell:</b>
                 <div1 id="qualities"></div1>

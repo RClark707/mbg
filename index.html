@@ -12,6 +12,11 @@
     .column {
         float: left;
         width: 33%;
+        place-items: center;
+    }
+
+    .column div {
+        max-width: 75%;
     }
 
     .row:after {
@@ -40,6 +45,7 @@
         generateLocation()
         generateMagic()
         generateExtra()
+        generateTrespasser()
     }
 </script>
 
@@ -273,7 +279,7 @@
             </div>
         </div>
         <div class="column">
-            <h1>Knave Extras</h1>
+            <h1>Knave Items</h1>
             <button type="button" onclick="generateExtra()">Roll Extra!</button>
             <p>This will help you generate extra details.</p>
             <div><b>Activity:</b>
@@ -302,6 +308,45 @@
             </div>
             <div><b>Book:</b>
                 <div1 id="books"></div1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <h1>Trespasser Generator</h1>
+            <button type="button" onclick="generateTrespasser()">Roll Trespasser!</button>
+            <p>This will help you generate rolls useful in the Trespasser RPG.</p>
+            <div><b>Magic Weapon:</b>
+                <div1 id="t_magic_modifier1"></div1>
+                <div1 id="t_weapons"></div1>
+                of
+                <div1 id="t_weapon_enchantment"></div1>
+            </div>
+            <div><b>Magic Armor:</b>
+                <div1 id="t_magic_modifier2"></div1>
+                <div1 id="t_armor"></div1>
+                of
+                <div1 id="t_armor_enchantment"></div1>
+            </div>
+            <div><b>Magic Accessory:</b>
+                <div1 id="t_magic_accessory"></div1>
+            </div>
+            <div><b>Magic Object:</b>
+                <div1 id="t_magic_object"></div1>
+            </div>
+            <div><b>Item:</b>
+                <div1 id="t_items"></div1>
+            </div>
+            <div><b>Treasure:</b>
+                <div1 id="t_treasure_material"></div1>
+                and
+                <div1 id="t_treasure_gemstone"></div1>
+                <div1 id="t_treasure_form"></div1>
+                with value
+                <div1 id="t_value"></div1>
+            </div>
+            <div><b>Haven Event:</b>
+                <div1 id="t_haven_events"></div1>
             </div>
         </div>
     </div>

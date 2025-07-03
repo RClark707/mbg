@@ -227,3 +227,57 @@ function generateExtra() {
 function setInner(element_id, text) {
     document.getElementById(element_id).innerHTML = text;
 }
+
+// THE FOLLOWING ARE USED FOR A SEPARATE RPG, CALLED TRESPASSER
+const tress = new Map([
+    ['t_weapons',['Battle Axe (d8, melee, confer frail 2)','Cudgel (d6, melee, confer toppled)','Crossbow (d10, missile 10, two-handed, confer bleeding 4)','Dagger (d4, melee/missile 4, thrown, add SS damage)','Flail (d8, melee, confer inaccurate 2)','Greataxe (d10, melee, two-handed, confer frail 2)','Greatsword (d10, melee, two-handed, confer unguarded 2)','Halberd (d8, melee 2, two-handed, sweep 1 & confer toppled)','Hatchet (d6, melee/missile 4, thrown, confer frail 2)','Longbow (d10, missile 12, two-handed, confer slow 2)','Mace (d6, melee, confer weak 2)','Maul (d10, melee, two-handed, confer inacurrate 2)','Morning Star (d8, melee, confer bleeding 4)','Pike (d8, melee 2, two-handed, push 2 & confer toppled)','Rod (d6, melee/spell 8, confer weary 2)','Shortbow (d8, missile 8, two-handed, confer slow 2)','Shortsword (d6, melee, confer unguarded 2)','Sickle (d6, melee, confer bleeding 4)','Sling (d4, missile 8, confer inaccurate 2)','Scythe (d8, melee 2, two-handed, confer bleeding 4)','Spear (d6, melee 2/missile 6, thrown, push 2)','Staff (d6, melee/spell 6, two-handed, sweep 1 & confer toppled)','Sword (d8, melee, confer unguarded 2)','Torch (d6, melee, confer burning 1)','Wand (spell 10)','War Hammer (d8, melee, confer weak 2)']]
+    ,['t_armor',['Hat (L, +1, d6)','Helm (L, +1, d8)','Great Helm (H, +1, d10)','Quilted (L, +1, d6)','Leather (L, +1, d8)','Chainmail (H, +2, d8)','Plate (H, +3, d10)','Gloves (L, d6)','Bracers (L, +1, d8)','Gauntlets (H, +2, d10)','Boots (L, d6)','High Boots (L, d8)','Greaves (H, +1, d10)','Mantle (L, d6)','Cloak (L, d8)','Longcoat (H, d10)','Buckler (d6)','Round Shield (+2, d6)','Heater Shield (+2, d8)','Kite Shield (+2, d10)']]
+    ,['t_items',['Alchemy Set','Beer, 1 gal.','Bell, Iron','Belt','Book','Boots','Bottle','Camping Gear','Candle','Cap','Cat','Chain, 10 ft.','Chalk','Chess Set','Chest','Cloak','Cooking Set','Dice','Dog','Doll','Fishing Rod','Flint & Steel','Flour','Grappling Hook','Horse','Hourglass','Ink','Instrumnet','Kettle','Ladder, 10 ft.','Lantern','Lantern Fuel','Locks','Lock Picks','Manacles','Mirror','Mule','Fine Outfit','Simple Outfit','Paints','Parchment','Playing Cards','Pole, 10 ft.','Oouch','Prybar','Quill','Rucksack','Rope, 50 ft.','Saddle','Shoes','Shovel','Soap','Spyglass','Strongbox','Torch','Vial','Waterskin','Wax','Whistle','Wine']]
+    ,['t_haven_events',['The Beast','The Cult','The Dark Circle','The Dragon','The Experiment','The Falling Star','The Famine','The Fire','The Hidden Tomb','The Horde','The Murder','The Plague','The Returned','The Revolt','The Rising Dead','The Rivalry','The Scapegoat','The Turncoat','The Vampire','The Vanishing']]
+    ,['t_treasure_material',['Stone','Wood','Bone','Leather','Bronze','Tin','Lead','Pewter','Brass','Copper','Iron','Porcelain','Glass','Coral','Petrified Wood','Crystal','Silver','Electrum','Gold','Platinum']]
+    ,['t_treasure_gemstone',['Jasper','Citrine','Moonstone','Jade','Lapis Lazuli','Amber','Moonstone','Agate','Peridot','Turquoise','Amethyst','Opal','Aquamarine','Zircon','Garnet','Pearl','Emerald','Sapphire','Ruby','Diamond']]
+    ,['t_treasure_form',['Gemstone','Game Piece','Silverware','Earring','Ring','Buckle','Hairpin','Doll','Figurine','Bracelet','Torque','Circlet','Necklace','Goblet','Hand Mirror','Book','Spyglass','Scepter','Crown','Holy Relic','Pot','Toy','Box','Drum','Flute','Lute','Horn','Game Set','Scroll Case','Candelabra','Framed Painting','Statuette','Vase','Cauldron','Harp','Chest','Large Framed Painting','Tapestry','Standing Mirror','Sculpture']]
+    ,['t_weapon_enchantment',['Acid (confer frail 2)','Aegis (gain fortified 2)','Embers (confer burning 2)','Gloom (jump up to your speed)','Impact (push 2, confer toppled 2)','Lightning (Deal half the damage dealt to another creature within range 4 of the target)','Malice (confer provoked 4)','Might (gain strong 4)','Moonlight (confer delirious 2)','Rending (confer bleeding 4)','Rime (confer slow 4)','Seeking (gain accurate 2)','Skill (gain 1 focus)','Slaying (Add ## damage)','Stunning (the target loses an action point at the start of its next turn)','Torpor (the target\'s next turn is delayed until the end of the round)','Venom (confer poison 4)','Vitality (make a recovery 2)','Weakness (confer weak 4)','Wind (sweep 4)']]
+    ,['t_armor_enchantment',['Arrow-Turning (When you block a missile attack with this die, double the die result.)','Blade-Turning (When you block a melee attack with this die, double the die result)','Bolstering (Gain strong with an intensity equal to half the die result.)','Cleansing (End one state affecting you or the target with an intensity lower than the die result.)','Gleaming (Confer provoked with an intensity equal to half the die result.)','Durability (When you spend this die, if the result is 1 or 2, the die is not expended.)','Gloom (Teleport up to half your speed.)','Luck (Roll the armor die twice and use the better result. If you roll doubles, add them together to determine the result, and this die is not expended.)','Mending (When you make or grant a recovery, you can expend this die to add it to number of hit points restored.)','Mirroring (Swap places with the attacker.)','Moonlight (Confer delirious to the attacker with an intensity equal to half the die result.)','Numbing (Confer weak to the attacker with an intensity equal to half the die result.)','Power (When you deal attack damage, you can expend this armor die to add it to the damage roll.)','Porjection (You can block with this die to prevent damage to any ally in sight.)','Reflection (When you spend this die, you deal damage to the attacker equal to twice the die result.)','Repulsion (Push 2. Confer toppled.)','Shielding (Gain fortified with an intensity equal to half the die result.)','Spell-Turning (When you block a spell or innate attack with this die, double the die result.)','Vengeance (Confer frail with an intensity equal to half the die result.)','Warding (When you spend this die, it reduces the damage dealt to each target of the attack, not just yourself.)']]
+    ,['t_magic_modifier1',['Size-Shifting','Summoned','Beast-Shifting','Tattoo-Shifting','Alchemical Touch','Honest','Wary','Visage-Warping','Immovable','Mood-Shifting','Alchemical','Seasoning','Sensation','Potion-Coated','Illuminating','Spellcasting','Igniting','Sense-Enhancing','Immaculate','Skillful','Ethereal','Faithful','Object-Shifting','Musical','Steaming','Summoning','Warming','Chilling','Sticky','Silent','Featherweight','Levitating','Duplicating','Branding','Recording','Weeping','Calming','Unveiling','Seeking','Telephonic','Reviving']]
+    ,['t_magic_modifier2',['Size-Shifting','Summoned','Beast-Shifting','Tattoo-Shifting','Alchemical Touch','Honest','Wary','Visage-Warping','Immovable','Mood-Shifting','Alchemical','Seasoning','Sensation','Potion-Coated','Illuminating','Spellcasting','Igniting','Sense-Enhancing','Immaculate','Skillful','Ethereal','Faithful','Object-Shifting','Musical','Steaming','Summoning','Warming','Chilling','Sticky','Silent','Featherweight','Levitating','Duplicating','Branding','Recording','Weeping','Calming','Unveiling','Seeking','Telephonic','Reviving']]
+    ,['t_magic_accessory',['Ring of Power, Lesser','Ring of Power, Greater','Ring of Intensity','Ring of Unraveling','Falcon Signet','Raven Signet','Candlewax Ring','Honeybee Signet','Serpent Signet','Unicorn Signet','Dragon Signet','Magnetic Iron Ring','Telescopic Glass Ring','Heavy Lead Ring','Cracked Stone Ring','Ring of Command','Fencer\'s Band','Band of Hatred','Ring of Ruin','Smoky Quartz Ring','Ring of Focusing','Commander\'s Band','Loop of the Newt','Loop of the Salamander','Amulet of Protection, Lesser','Amulet of Protection, Greater','Chain of Preservation','Amulet of Luck','Luckswap Amulet','Pendant of the Archmage','Amulet of Enduring Spirit','Amulet of Health, Lesser','Amulet of Health, Greater','Barrier Pendant','Two-Faced Pendant','Brooch of Swiftness, Lesser','Brooch of Swiftness, Greater','Cricket Brooch','Laces of Light Steps','Oak Tree Talisman','Feather Brooch','Cliff Talisman','Rime Talisman','Ember Talisman','Cloud Talisman','Jester\'s Bell Brooch','Traveler\'s Charm','Cowardly Silver Charm']]
+    ,['t_magic_object',['Ardent Chain','Bell of Silence','Bottle of Smoke','Bronze Kettle','Cat Flagon','Chameleon Tent','Endless Chalk','Endless Scroll','Fishing Rod of Bounty','Honest Finery','Inverted Candle','Jackdaw\'s Lockpicks','Kindle Stone','Ladder of Length','Lantern of Door Projection','Living Loaf','Luminous Paints','Magician\'s Chess Set','Mender\'s Grease','Mirror of Viewing','Mocking Chest','Oil of Lasting Flame','Peerless Lute','Powder of Revealing','Purging Soap','Quill of Dictation','Replenishing Flask','Scarf of Illusion','Selective Ink','Sentient Rope','Spoon of Digging','Temporal Prism','Torch of Stone Melting','Trick Dice','Whispering Head']]
+]);
+
+
+function generateTrespasser() {
+    let mat_val = 0;
+    let gem_val = 0;
+    let form_val = 0;
+    let val_val = '1';
+    // ASSIGN VALUES
+    for (let [key, value] of tress) {
+        if (key == 't_treasure_material') {
+            mat_val = Math.floor(Math.random() * value.length);
+            setInner(key,value[mat_val]);
+        } else if (key == 't_treasure_gemstone') {
+            gem_val = Math.floor(Math.random() * value.length);
+            setInner(key,value[gem_val]);
+        } else if (key == 't_treasure_form') {
+            form_val = Math.floor(Math.random() * value.length);
+            setInner(key,value[form_val]);
+            form_val = form_val % 20;
+        } else {
+            setInner(key, value[Math.floor(Math.random() * value.length)]);
+        }
+    }
+    // ASSIGN TREASURE VALUE
+    switch (true) {
+        case (mat_val + gem_val + form_val > 35):
+            val_val = '5';
+            break;
+        case (mat_val + gem_val + form_val > 25):
+            val_val = '3';
+            break;
+        default:
+            val_val = '1';
+            break;
+    }
+    setInner('t_value',val_val);
+}

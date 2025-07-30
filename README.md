@@ -1,5 +1,7 @@
 # mbg
-A collection of random generators for use with Mythic Bastionland by Chris McDowell.
+A collection of random generators for use with Mythic Bastionland by Chris McDowell (https://chrismcdee.itch.io/mythic-bastionland).
+
+There are also some random generators for use with the Trespasser RPG by tundalus (https://tundalus.itch.io/trespasser).
 ## Tables
 All of the spark tables from the book (p. 22) are included. I also added a collection of tables from Knave 2e by Ben Milton (Questing Beast) that felt like they might be useful in either game preparation or during a session.
 ## Running online games
